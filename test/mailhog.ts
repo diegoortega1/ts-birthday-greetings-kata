@@ -32,7 +32,7 @@ const mockSmtpServer = {
 
 export const startMailhog = async () => {
   // Simulamos el tiempo que tarda Docker en levantar el contenedor
-  await wait(1000);
+  await wait(2000);
   messageStore = [];
   jest.spyOn(require("nodemailer"), "createTransport").mockReturnValue({
     sendMail: async (mail: any) => {
@@ -46,7 +46,7 @@ export const startMailhog = async () => {
 
 export const stopMailHog = async () => {
   // Simulamos el tiempo que tarda Docker en detener el contenedor
-  await wait(500);
+  await wait(1000);
   jest.restoreAllMocks();
   messageStore = [];
 };
