@@ -16,12 +16,18 @@ El objetivo es refactorizar una aplicación que envía saludos de cumpleaños, a
 
 La aplicación lee un archivo CSV con datos de empleados y envía emails de felicitación en sus cumpleaños. El código actual mezcla responsabilidades y tiene dependencias directas con implementaciones concretas.
 
+## Notas
+
+- No modificar las clases `Employee` y `OurDate` ni sus tests. Sí se pueden reubicar.
+- Los tests de `Acceptance.test.ts` nos ofrecen una red de seguridad para refactorizar. Deberían estar siempre en verde y se deberían hacer cambios mínimos en ellos.
+- Mantener `BirthdayService` (se puede reubicar). Libertad para modificar la interfaz de `BirthdayService.sendGreetings()` si es necesario.
+
 ## Cómo empezar
 
 Para arrancar deberías descargarte este código e iniciarlo:
 
 ```bash
-yarn
+yarn install
 ```
 
 Para ejecutar los tests:
