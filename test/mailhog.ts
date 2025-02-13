@@ -1,3 +1,8 @@
+/**
+ * NO TOCAR.
+ * Simula el almacén de mensajes que hace MailHog para eliminar la dependencia con MailHog/Docker.
+ */
+
 interface Message {
   Content: {
     Body: string;
