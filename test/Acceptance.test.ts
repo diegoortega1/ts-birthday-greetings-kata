@@ -8,14 +8,13 @@ describe("Acceptance", () => {
   const SMTP_URL = "127.0.0.1";
   let service: BirthdayService;
 
-  beforeEach(() => {
-    startMailhog();
-
+  beforeEach(async () => {
+    await startMailhog();
     service = new BirthdayService();
   });
 
-  afterEach(() => {
-    stopMailHog();
+  afterEach(async () => {
+    await stopMailHog();
   });
 
   it("base scenario", async () => {
