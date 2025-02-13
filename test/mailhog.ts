@@ -8,7 +8,6 @@ interface Message {
   };
 }
 
-// Simulamos el almacén de mensajes que hace MailHog
 let messageStore: Message[] = [];
 
 const wait = async (ms: number): Promise<void> => {
