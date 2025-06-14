@@ -1,10 +1,5 @@
+import { Email } from "src/Dominio/Email";
 import { Employee } from "src/Dominio/Employee";
-
-interface Email {
-  recipient: string;
-  body: string;
-  subject: string;
-}
 
 export function createEmailRepository(employee: Employee) {
   const recipient = employee.getEmail();
@@ -13,6 +8,7 @@ export function createEmailRepository(employee: Employee) {
     employee.getFirstName()
   );
   const subject = "Happy Birthday!";
-  const email: Email = { recipient, body, subject };
+  const sender = "sender@here.com";
+  const email: Email = { recipient, body, subject, sender };
   return email;
 }

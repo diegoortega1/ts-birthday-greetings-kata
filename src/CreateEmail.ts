@@ -1,3 +1,4 @@
+import { Email } from "./Dominio/Email";
 import { Employee } from "./Dominio/Employee";
 
 export function createEmail(
@@ -12,5 +13,7 @@ export function createEmail(
     employee.getFirstName()
   );
   const subject = "Happy Birthday!";
-  sendMessage(smtpHost, smtpPort, "sender@here.com", subject, body, recipient);
+  const sender = "sender@here.com";
+  const email: Email = { recipient, body, subject, sender };
+  sendMessage(smtpHost, smtpPort, email);
 }

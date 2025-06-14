@@ -1,24 +1,22 @@
 import nodemailer from "nodemailer";
 import Mail from "nodemailer/lib/mailer";
 import SMTPTransport from "nodemailer/lib/smtp-transport";
+import { Email } from "src/Dominio/Email";
 
 export interface Message extends SMTPTransport.Options, Mail.Options {}
 
-export async function sendMessage(
+export async function sendEmailRepository(
   smtpHost: string,
   smtpPort: number,
-  sender: string,
-  subject: string,
-  body: string,
-  recipient: string
+  email: Email
 ) {
   const message = {
     host: smtpHost,
     port: smtpPort,
-    from: sender,
-    to: [recipient],
-    subject,
-    text: body,
+    from: email.sender,
+    to: [email.recipient],
+    subject: email.subject,
+    text: email.body,
   };
 
   deliveryMessage(message);

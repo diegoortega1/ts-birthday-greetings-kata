@@ -1,5 +1,5 @@
 import { OurDate } from "../Dominio/OurDate";
-import { sendMessage } from "../Infraestructura/SendMessage";
+import { sendEmailRepository } from "../Infraestructura/SendEmailRepository";
 import { fileEmployeesRepository } from "../Infraestructura/FileEmployeesRepository";
 import { createEmail } from "../CreateEmail";
 import { Employee } from "../Dominio/Employee";
@@ -15,7 +15,7 @@ export class BirthdayService {
 
     employees.forEach((employee) => {
       if (employee.isBirthday(ourDate)) {
-        createEmail(employee, sendMessage, smtpHost, smtpPort);
+        createEmail(employee, sendEmailRepository, smtpHost, smtpPort);
       }
     });
   }
