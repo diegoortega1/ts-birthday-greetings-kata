@@ -1,4 +1,4 @@
-import { Employee } from "./Employee";
+import { Employee } from "./Dominio/Employee";
 
 export function createEmail(
   employee: Employee,

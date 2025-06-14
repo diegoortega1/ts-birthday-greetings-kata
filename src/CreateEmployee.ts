@@ -1,4 +1,4 @@
-import { Employee } from "./Employee";
+import { Employee } from "./Infraestructura/Aplicacion/Dominio/Employee";
 
 export function createEmployee(line: string) {
   const employeeData = line.split(", ");
