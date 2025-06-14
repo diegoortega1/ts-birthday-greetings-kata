@@ -1,4 +1,4 @@
-import { OurDate } from "../OurDate";
+import { OurDate } from "../Dominio/OurDate";
 import { sendMessage } from "../Infraestructura/SendMessage";
 import { employeesRepository } from "../Infraestructura/EmployeesRepository";
 import { createEmail } from "../CreateEmail";

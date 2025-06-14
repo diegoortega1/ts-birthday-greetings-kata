@@ -1,4 +1,4 @@
-import { OurDate } from "../src/OurDate";
+import { OurDate } from "../src/Dominio/OurDate";
 import { Employee } from "../src/Dominio/Employee";
 
 describe("Employee", () => {
