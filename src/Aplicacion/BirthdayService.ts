@@ -12,7 +12,7 @@ export class BirthdayService {
     private sendEmailRepository: SendEmailRepository
   ) {}
 
-  sendGreetings(ourDate: OurDate, smtpHost: string, smtpPort: number) {
+  sendGreetings(ourDate: OurDate) {
     const employees: Employee[] = this.employeeRepository.getAllEmployees();
 
     employees.forEach((employee) => {
