@@ -1,6 +1,6 @@
 import fs from "fs";
 import path from "path";
-import { Employee } from "./Aplicacion/Dominio/Employee";
+import { Employee } from "../Dominio/Employee";
 
 export function employeesRepository(fileName: string): Employee[] {
   const data = fs.readFileSync(

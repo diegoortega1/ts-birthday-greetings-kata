@@ -1,8 +1,8 @@
-import { OurDate } from "./OurDate";
-import { sendMessage } from "./Infraestructura/SendMessage";
-import { employeesRepository } from "./Infraestructura/EmployeesRepository";
-import { createEmail } from "./Infraestructura/Aplicacion/CreateEmail";
-import { Employee } from "./Infraestructura/Aplicacion/Dominio/Employee";
+import { OurDate } from "../OurDate";
+import { sendMessage } from "../Infraestructura/SendMessage";
+import { employeesRepository } from "../Infraestructura/EmployeesRepository";
+import { createEmail } from "../CreateEmail";
+import { Employee } from "../Dominio/Employee";
 
 export class BirthdayService {
   sendGreetings(

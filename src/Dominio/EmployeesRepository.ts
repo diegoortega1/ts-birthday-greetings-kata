@@ -1,5 +1,5 @@
 import { Employee } from "./Employee";
 
-interface EmployeesRepository {
+export interface EmployeesRepository {
   getAllEmployees(): Employee[];
 }
