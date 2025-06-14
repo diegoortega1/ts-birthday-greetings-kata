@@ -4,6 +4,7 @@ import { messagesSent, startMailhog, stopMailHog } from "./mailhog";
 import flushPromises from "flush-promises";
 import { fileEmployeesRepository } from "src/Infraestructura/FileEmployeesRepository";
 import { createEmailRepository } from "src/Infraestructura/CreateEmailRepository";
+import { SendEmailRepository } from "src/Infraestructura/SendEmailRepository";
 
 describe("Acceptance", () => {
   const SMTP_PORT = 1025;
@@ -16,7 +17,12 @@ describe("Acceptance", () => {
       "../resources/employee_data.txt"
     );
 
-    service = new BirthdayService(employeeRepository, createEmailRepository);
+    const sendEmailRepository = new SendEmailRepository(SMTP_URL, SMTP_PORT);
+    service = new BirthdayService(
+      employeeRepository,
+      createEmailRepository,
+      sendEmailRepository
+    );
   });
 
   afterEach(async () => {
