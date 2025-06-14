@@ -2,7 +2,7 @@ import fs from "fs";
 import path from "path";
 import { Employee } from "../Dominio/Employee";
 
-export function employeesRepository(fileName: string): Employee[] {
+export function fileEmployeesRepository(fileName: string): Employee[] {
   const data = fs.readFileSync(
     path.resolve(__dirname, `../../resources/${fileName}`),
     "UTF-8"

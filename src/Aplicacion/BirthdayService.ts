@@ -1,6 +1,6 @@
 import { OurDate } from "../Dominio/OurDate";
 import { sendMessage } from "../Infraestructura/SendMessage";
-import { employeesRepository } from "../Infraestructura/EmployeesRepository";
+import { fileEmployeesRepository } from "../Infraestructura/FileEmployeesRepository";
 import { createEmail } from "../CreateEmail";
 import { Employee } from "../Dominio/Employee";
 
@@ -11,7 +11,7 @@ export class BirthdayService {
     smtpHost: string,
     smtpPort: number
   ) {
-    const employees: Employee[] = employeesRepository(fileName);
+    const employees: Employee[] = fileEmployeesRepository(fileName);
 
     employees.forEach((employee) => {
       if (employee.isBirthday(ourDate)) {
