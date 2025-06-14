@@ -2,6 +2,7 @@ import { OurDate } from "../src/Dominio/OurDate";
 import { BirthdayService } from "../src/Aplicacion/BirthdayService";
 import { messagesSent, startMailhog, stopMailHog } from "./mailhog";
 import flushPromises from "flush-promises";
+import { fileEmployeesRepository } from "src/Infraestructura/FileEmployeesRepository";
 
 describe("Acceptance", () => {
   const SMTP_PORT = 1025;
@@ -10,7 +11,10 @@ describe("Acceptance", () => {
 
   beforeEach(async () => {
     await startMailhog();
-    service = new BirthdayService();
+    const employeeRepository = new fileEmployeesRepository(
+      "../resources/employee_data.txt"
+    );
+    service = new BirthdayService(employeeRepository);
   });
 
   afterEach(async () => {

@@ -3,10 +3,11 @@ import path from "path";
 import { Employee } from "../Dominio/Employee";
 import { EmployeeRepository } from "src/Dominio/EmployeeRepository";
 
-export const fileEmployeesRepository: EmployeeRepository = {
-  getAllEmployees: (fileName) => {
+export class fileEmployeesRepository implements EmployeeRepository {
+  constructor(private fileName: string) {}
+  getAllEmployees(): Employee[] {
     const data = fs.readFileSync(
-      path.resolve(__dirname, `../../resources/${fileName}`),
+      path.resolve(__dirname, `../../resources/${this.fileName}`),
       "UTF-8"
     );
 
@@ -24,5 +25,5 @@ export const fileEmployeesRepository: EmployeeRepository = {
       employees.push(employee);
     });
     return employees;
-  },
-};
+  }
+}
