@@ -1,5 +1,5 @@
 import { Employee } from "./Employee";
 
 export interface EmployeeRepository {
-  getAllEmployees(): Employee[];
+  getAllEmployees(fileName: string): Employee[];
 }

@@ -12,7 +12,8 @@ export class BirthdayService {
     smtpHost: string,
     smtpPort: number
   ) {
-    const employees: Employee[] = fileEmployeesRepository(fileName);
+    const employees: Employee[] =
+      fileEmployeesRepository.getAllEmployees(fileName);
 
     employees.forEach((employee) => {
       if (employee.isBirthday(ourDate)) {
