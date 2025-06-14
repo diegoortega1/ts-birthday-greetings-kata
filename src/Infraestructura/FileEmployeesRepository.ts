@@ -3,7 +3,7 @@ import path from "path";
 import { Employee } from "../Dominio/Employee";
 import { EmployeeRepository } from "src/Dominio/EmployeeRepository";
 
-export class fileEmployeesRepository implements EmployeeRepository {
+export class FileEmployeesRepository implements EmployeeRepository {
   constructor(private fileName: string) {}
   getAllEmployees(): Employee[] {
     const data = fs.readFileSync(

@@ -2,7 +2,7 @@ import { OurDate } from "../src/Dominio/OurDate";
 import { BirthdayService } from "../src/Aplicacion/BirthdayService";
 import { messagesSent, startMailhog, stopMailHog } from "./mailhog";
 import flushPromises from "flush-promises";
-import { fileEmployeesRepository } from "src/Infraestructura/FileEmployeesRepository";
+import { FileEmployeesRepository } from "src/Infraestructura/FileEmployeesRepository";
 import { createEmailRepository } from "src/Infraestructura/CreateEmailRepository";
 import { SendEmailRepository } from "src/Infraestructura/SendEmailRepository";
 
@@ -13,7 +13,7 @@ describe("Acceptance", () => {
 
   beforeEach(async () => {
     await startMailhog();
-    const employeeRepository = new fileEmployeesRepository(
+    const employeeRepository = new FileEmployeesRepository(
       "../resources/employee_data.txt"
     );
 
