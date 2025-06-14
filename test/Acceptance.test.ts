@@ -3,6 +3,7 @@ import { BirthdayService } from "../src/Aplicacion/BirthdayService";
 import { messagesSent, startMailhog, stopMailHog } from "./mailhog";
 import flushPromises from "flush-promises";
 import { fileEmployeesRepository } from "src/Infraestructura/FileEmployeesRepository";
+import { createEmailRepository } from "src/Infraestructura/CreateEmailRepository";
 
 describe("Acceptance", () => {
   const SMTP_PORT = 1025;
@@ -14,7 +15,8 @@ describe("Acceptance", () => {
     const employeeRepository = new fileEmployeesRepository(
       "../resources/employee_data.txt"
     );
-    service = new BirthdayService(employeeRepository);
+
+    service = new BirthdayService(employeeRepository, createEmailRepository);
   });
 
   afterEach(async () => {
