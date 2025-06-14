@@ -7,12 +7,8 @@ import { EmployeeRepository } from "src/Dominio/EmployeeRepository";
 
 export class BirthdayService {
   constructor(private employeeRepository: EmployeeRepository) {}
-  sendGreetings(
-    fileName: string,
-    ourDate: OurDate,
-    smtpHost: string,
-    smtpPort: number
-  ) {
+
+  sendGreetings(ourDate: OurDate, smtpHost: string, smtpPort: number) {
     const employees: Employee[] = this.employeeRepository.getAllEmployees();
 
     employees.forEach((employee) => {
